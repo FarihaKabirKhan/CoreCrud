@@ -9,3 +9,4 @@ For Migration:
 Tools=>NuGet package Manager=> package Manager console
 add-migration InitialCreate
 update-database
+https://farihakabirkhan.github.io/CoreCrud/
