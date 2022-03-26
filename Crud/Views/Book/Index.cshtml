@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Crud.Models.Book>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<p>
+    <a asp-action="CreateEdit">Create</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+
+        <th>
+            <a asp-action=""></a>
+        </th>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => item.BookID)</td>
+
+
+                <td>@Html.DisplayFor(model => item.BookName)</td>
+
+                <td>
+                    <a asp-action="CreateEdit" asp-route-id="@item.BookID">Edit</a>
+
+                    <a asp-action="delete" asp-route-id="@item.BookID" onclick="return confirm('Are you Sure Delete')">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+
